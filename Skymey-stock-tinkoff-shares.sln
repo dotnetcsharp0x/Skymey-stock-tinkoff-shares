@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34205.153
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skymey-stock-tinkoff-shares", "Skymey-stock-tinkoff-shares\Skymey-stock-tinkoff-shares.csproj", "{818731F5-7BDA-4E43-A737-36F1A4879CAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{818731F5-7BDA-4E43-A737-36F1A4879CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{818731F5-7BDA-4E43-A737-36F1A4879CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{818731F5-7BDA-4E43-A737-36F1A4879CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{818731F5-7BDA-4E43-A737-36F1A4879CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94FFA6F6-2AB6-46D7-9F2E-4F96548FDE78}
+	EndGlobalSection
+EndGlobal
