@@ -5,6 +5,7 @@ using Skymey_main_lib.Models.Bonds.Tinkoff;
 using Skymey_main_lib.Models.Currencies.Tinkoff;
 using Skymey_main_lib.Models.ETF.Tinkoff;
 using Skymey_main_lib.Models.Futures.Tinkoff;
+using Skymey_main_lib.Models.Tables.Stocks;
 using Skymey_main_lib.Models.Tickers.Polygon;
 using Skymey_main_lib.Models.Tickers.Tinkoff;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Skymey_stock_tinkoff_shares.Data
     {
         public DbSet<TickerList> TickerList { get; init; }
         public DbSet<TinkoffSharesInstrument> Shares { get; init; }
+        public DbSet<stock_stocks> stock_stocks { get; init; }
         public static ApplicationContext Create(IMongoDatabase database) =>
             new(new DbContextOptionsBuilder<ApplicationContext>()
                 .UseMongoDB(database.Client, database.DatabaseNamespace.DatabaseName)
@@ -29,7 +31,8 @@ namespace Skymey_stock_tinkoff_shares.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<TickerList>().ToCollection("stock_tickerlist");
-            modelBuilder.Entity<TinkoffSharesInstrument>().ToCollection("stock_shareslist");
+            modelBuilder.Entity<stock_stocks>().ToCollection("stock_stocks");
+            modelBuilder.Entity<TinkoffSharesInstrument>().ToCollection("stock_tinkoff_shareslist");
         }
     }
 }

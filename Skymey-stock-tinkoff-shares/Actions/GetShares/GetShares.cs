@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using Skymey_main_lib.Models.Futures.Tinkoff;
+using Skymey_main_lib.Models.Tables.Stocks;
 using Skymey_main_lib.Models.Tickers.Tinkoff;
 using Skymey_stock_tinkoff_shares.Data;
 using System;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tinkoff.InvestApi;
+using Tinkoff.InvestApi.V1;
 
 namespace Skymey_stock_tinkoff_shares.Actions.GetShares
 {
@@ -198,6 +200,21 @@ namespace Skymey_stock_tinkoff_shares.Actions.GetShares
                     tsi.ipoDate = item.IpoDate;
                     if (tsi.ipoDate == null) tsi.ipoDate= Timestamp.FromDateTime(DateTime.UtcNow);
                     tsi.Update = DateTime.UtcNow;
+
+                    stock_stocks stock = new stock_stocks();
+                    stock._id = ObjectId.GenerateNewId();
+                    stock.Currency = item.Currency;
+                    stock.Country = item.Currency;
+                    stock.Figi = item.Figi;
+                    stock.Isin = item.Isin;
+                    stock.Title = item.Name;
+                    stock.Exchange = item.RealExchange.ToString();
+                    stock.Ticker = item.Ticker;
+                    stock.Dividends = item.DivYieldFlag;
+                    stock.Sector = item.Sector;
+                    stock.Updated = DateTime.UtcNow;
+
+                    _db.stock_stocks.Add(stock);
                     _db.Shares.Add(tsi);
                 }
             }
